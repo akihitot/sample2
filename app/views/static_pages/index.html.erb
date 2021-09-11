@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <%= render partial: 'user' %>
+<% elsif admin_user_signed_in? %>
+  <%= render partial: 'admin_user' %>
+<% else %>
+  <%= link_to 'ワクチンパスポートの発行', user_path %>
+  <%= link_to '医療関係者はコチラ', admin_user_path %>
+<% end %>

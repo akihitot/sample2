@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <h2><%= current_user.name %></h2>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+  <div class="contents row">
+    <% @staticpages.each do |staticpage| %>
+      <% if staticpage.my_number == current_user.my_number %>
+        <%= staticpage.my_number %>
+        <%= staticpage.manufacturer %>
+        <%= staticpage.lot_number %>
+        <%= staticpage.date %>
+      <% end %>
+    <% end %>
+  </div>
+
+<% else %>
+  <h2> ユーザー </h2>
+  <%= link_to 'ログイン', new_user_session_path %>
+  <%= link_to '新規登録', new_user_registration_path %>
+<% end %>

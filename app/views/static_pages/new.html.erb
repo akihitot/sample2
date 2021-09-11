@@ -1,0 +1,25 @@
+<%= form_with model: @staticpage, local: true do |f|%>
+  <div class="field">
+    <%= f.label :my_number, "マイナンバー" %><br />
+    <%= f.text_field :my_number, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manufacturer, "メーカー" %><br />
+    <%= f.text_field :manufacturer, class: :form__text, id:"prototype_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lot_number, "製造番号" %><br />
+    <%= f.text_field :lot_number, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date, "日付" %><br />
+    <%= f.text_field :date, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "実績登録", class: :form__btn  %>
+  </div>
+<% end %>

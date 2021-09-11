@@ -1,0 +1,9 @@
+<% if admin_user_signed_in? %>
+  <h2><%= current_admin_user.name %></h2>
+  <%= link_to 'ログアウト', destroy_admin_user_session_path, method: :delete %>
+  <%= link_to '実績登録', new_static_page_path %>
+<% else %>
+  <h2>管理者</h2>
+  <%= link_to 'ログイン', new_admin_user_session_path %>
+  <%= link_to '新規登録', new_admin_user_registration_path %>
+<% end %>
